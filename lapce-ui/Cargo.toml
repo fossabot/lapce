@@ -103,6 +103,7 @@ all-languages = [
     "lang-diff",
     "lang-gitconfig",
     "lang-gitrebase",
+    "lang-gitcommit",
 ]
 
 lang-rust = ["lapce-core/lang-rust"]
@@ -145,3 +146,4 @@ lang-latex = ["lapce-core/lang-latex"]
 lang-diff = ["lapce-core/lang-diff"]
 lang-gitconfig = ["lapce-core/lang-gitconfig"]
 lang-gitrebase = ["lapce-core/lang-gitrebase"]
+lang-gitcommit = ["lapce-core/lang-gitcommit"]

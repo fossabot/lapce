@@ -97,6 +97,7 @@ declare_language_highlights!(
     Diff: "lang-diff",
     GitConfig: "lang-gitconfig",
     GitRebase: "lang-gitrebase",
+    GitCommit: "lang-gitcommit",
 );
 
 /// Indicates which highlight should be applied to a region of source code.

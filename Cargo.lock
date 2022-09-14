@@ -2541,6 +2541,7 @@ dependencies = [
  "tree-sitter-elixir",
  "tree-sitter-elm",
  "tree-sitter-git-config",
+ "tree-sitter-gitcommit",
  "tree-sitter-glimmer",
  "tree-sitter-go",
  "tree-sitter-hare",
@@ -5015,6 +5016,15 @@ dependencies = [
 name = "tree-sitter-git-config"
 version = "0.0.1"
 source = "git+https://github.com/the-mikedavis/tree-sitter-git-config#a01b498b25003d97a5f93b0da0e6f28307454347"
+dependencies = [
+ "cc",
+ "tree-sitter",
+]
+
+[[package]]
+name = "tree-sitter-gitcommit"
+version = "0.0.1"
+source = "git+https://github.com/the-mikedavis/tree-sitter-git-commit#dcba1ca149926edd6a3c3425648b1500659f7816"
 dependencies = [
  "cc",
  "tree-sitter",
