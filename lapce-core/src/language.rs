@@ -194,6 +194,8 @@ pub enum LapceLanguage {
     Latex,
     #[cfg(feature = "lang-diff")]
     Diff,
+    #[cfg(feature = "lang-gitconfig")]
+    GitConfig,
 }
 
 // NOTE: Elements in the array must be in the same order as the enum variants of
@@ -728,6 +730,18 @@ const LANGUAGES: &[SyntaxProperties] = &[
         sticky_headers: &[],
         extensions: &["diff"],
     },
+    #[cfg(feature = "lang-gitconfig")]
+    SyntaxProperties {
+        id: LapceLanguage::GitConfig,
+        language: tree_sitter_git_config::language,
+        highlight: "",
+        injection: None,
+        comment: "#",
+        indent: "  ",
+        code_lens: (DEFAULT_CODE_LENS_LIST, DEFAULT_CODE_LENS_IGNORE_LIST),
+        sticky_headers: &[],
+        extensions: &["gitconfig"],
+    },
 ];
 
 impl LapceLanguage {
@@ -1060,5 +1074,9 @@ mod test {
     #[cfg(feature = "lang-diff")]
     fn test_diff_lang() {
         assert_language(LapceLanguage::Diff, &["diff"]);
+    }
+    #[cfg(feature = "lang-gitconfig")]
+    fn test_gitconfig_lang() {
+        assert_language(LapceLanguage::GitConfig, &["gitconfig"]);
     }
 }

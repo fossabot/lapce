@@ -63,6 +63,7 @@ tree-sitter-dart = { git = "https://github.com/syntacti/tree-sitter-dart", branc
 tree-sitter-svelte = { git = "https://github.com/Himujjal/tree-sitter-svelte", branch = "master", optional = true }
 tree-sitter-latex = { git = "https://github.com/latex-lsp/tree-sitter-latex", branch = "master", optional = true }
 tree-sitter-diff = { git = "https://github.com/the-mikedavis/tree-sitter-diff", optional = true }
+tree-sitter-git-config = { git = "https://github.com/the-mikedavis/tree-sitter-git-config", optional = true }
 
 [features]
 default = []
@@ -107,3 +108,4 @@ lang-dart = ["dep:tree-sitter-dart"]
 lang-svelte = ["dep:tree-sitter-svelte"]
 lang-latex = ["dep:tree-sitter-latex"]
 lang-diff = ["dep:tree-sitter-diff"]
+lang-gitconfig = ["dep:tree-sitter-git-config"]
