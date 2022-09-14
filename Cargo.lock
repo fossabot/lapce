@@ -2536,6 +2536,7 @@ dependencies = [
  "tree-sitter-cpp",
  "tree-sitter-css",
  "tree-sitter-dart",
+ "tree-sitter-diff",
  "tree-sitter-dockerfile",
  "tree-sitter-elixir",
  "tree-sitter-elm",
@@ -4966,6 +4967,15 @@ dependencies = [
 name = "tree-sitter-dart"
 version = "0.0.1"
 source = "git+https://github.com/syntacti/tree-sitter-dart?branch=master#78cad4503571d72666f78d5ba8ed6c1417653063"
+dependencies = [
+ "cc",
+ "tree-sitter",
+]
+
+[[package]]
+name = "tree-sitter-diff"
+version = "0.0.1"
+source = "git+https://github.com/the-mikedavis/tree-sitter-diff#fd74c78fa88a20085dbc7bbeaba066f4d1692b63"
 dependencies = [
  "cc",
  "tree-sitter",

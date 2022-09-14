@@ -192,6 +192,8 @@ pub enum LapceLanguage {
     Svelte,
     #[cfg(feature = "lang-latex")]
     Latex,
+    #[cfg(feature = "lang-diff")]
+    Diff,
 }
 
 // NOTE: Elements in the array must be in the same order as the enum variants of
@@ -714,6 +716,18 @@ const LANGUAGES: &[SyntaxProperties] = &[
         sticky_headers: &[],
         extensions: &["tex"],
     },
+    #[cfg(feature = "lang-diff")]
+    SyntaxProperties {
+        id: LapceLanguage::Diff,
+        language: tree_sitter_diff::language,
+        highlight: "",
+        injection: None,
+        comment: "",
+        indent: "  ",
+        code_lens: (DEFAULT_CODE_LENS_LIST, DEFAULT_CODE_LENS_IGNORE_LIST),
+        sticky_headers: &[],
+        extensions: &["diff"],
+    },
 ];
 
 impl LapceLanguage {
@@ -1042,5 +1056,9 @@ mod test {
     #[cfg(feature = "lang-latex")]
     fn test_latex_lang() {
         assert_language(LapceLanguage::Latex, &["tex"]);
+    }
+    #[cfg(feature = "lang-diff")]
+    fn test_diff_lang() {
+        assert_language(LapceLanguage::Diff, &["diff"]);
     }
 }
