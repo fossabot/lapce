@@ -196,6 +196,8 @@ pub enum LapceLanguage {
     Diff,
     #[cfg(feature = "lang-gitconfig")]
     GitConfig,
+    #[cfg(feature = "lang-gitrebase")]
+    GitRebase,
 }
 
 // NOTE: Elements in the array must be in the same order as the enum variants of
@@ -742,6 +744,18 @@ const LANGUAGES: &[SyntaxProperties] = &[
         sticky_headers: &[],
         extensions: &["gitconfig"],
     },
+    #[cfg(feature = "lang-gitrebase")]
+    SyntaxProperties {
+        id: LapceLanguage::GitRebase,
+        language: tree_sitter_rebase::language,
+        highlight: "",
+        injection: None,
+        comment: "#",
+        indent: "  ",
+        code_lens: (DEFAULT_CODE_LENS_LIST, DEFAULT_CODE_LENS_IGNORE_LIST),
+        sticky_headers: &[],
+        extensions: &["gitconfig"],
+    },
 ];
 
 impl LapceLanguage {
@@ -1078,5 +1092,9 @@ mod test {
     #[cfg(feature = "lang-gitconfig")]
     fn test_gitconfig_lang() {
         assert_language(LapceLanguage::GitConfig, &["gitconfig"]);
+    }
+    #[cfg(feature = "lang-gitrebase")]
+    fn test_gitrebase_lang() {
+        assert_language(LapceLanguage::GitRebase, &["gitrebase"]);
     }
 }

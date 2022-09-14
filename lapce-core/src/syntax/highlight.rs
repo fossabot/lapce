@@ -96,6 +96,7 @@ declare_language_highlights!(
     Latex: "lang-latex",
     Diff: "lang-diff",
     GitConfig: "lang-gitconfig",
+    GitRebase: "lang-gitrebase",
 );
 
 /// Indicates which highlight should be applied to a region of source code.
