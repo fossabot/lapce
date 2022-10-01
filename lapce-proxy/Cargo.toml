@@ -5,43 +5,43 @@ authors = ["Dongdong Zhou <dzhou121@gmail.com>"]
 edition = "2021"
 
 [dependencies]
-interprocess = "1.1.1"
-clap = { version = "3.2.17", features = ["derive"] }
-once_cell = "1.15"
+interprocess = { default-features = false, version = "1.1.1" }
+clap = { version = "3.2.17", features = ["derive", "std"], default-features = false }
+once_cell = { default-features = false, version = "1.15" }
 url = "2.2.2"
 dyn-clone = "1.0.8"
 which = "4.2.5"
-regex = "1.5.6"
+regex = { default-features = false, version = "1.5.6" }
 grep-searcher = "0.1.8"
 grep-matcher = "0.1.5"
 grep-regex = "0.1.9"
 walkdir = "2.3.2"
 ignore = "0.4.18"
-globset = "0.4.9"
-reqwest = { version = "0.11", features = ["blocking", "json", "socks"] }
-wasmtime = "0.39.1"
-wasmtime-wasi = "0.39.1"
-wasi-common = "0.39.1"
+globset = { default-features = false, version = "0.4.9" }
+reqwest = { version = "0.11", default-features = false }
+wasmtime = { default-features = false, version = "0.39.1" }
+wasmtime-wasi = { default-features = false, version = "0.39.1" }
+wasi-common = { default-features = false, version = "0.39.1" }
 wasi-experimental-http-wasmtime = { git = "https://github.com/lapce/wasi-experimental-http" }
 directories = "4.0.1"
 locale_config = "0.3.0"
-base64 = "0.13.0"
+base64 = { default-features = false, version = "0.13.0" }
 alacritty_terminal = "0.16.1"
-mio = "0.6.20"
-notify = "5.0.0-pre.13"
-xi-rope = { git = "https://github.com/lapce/xi-editor", features = ["serde"] }
-serde = { version = "1.0", features = ["derive"] }
-lsp-types = { version = "0.93", features = ["proposed"] }
+mio = { default-features = false, version = "0.6.20" }
+notify = { features = ["crossbeam-channel"], default-features = false, version = "5.0.0-pre.13" }
+xi-rope = { git = "https://github.com/lapce/xi-editor", default-features = false }
+serde = { version = "1.0", default-features = false }
+lsp-types = { version = "0.93", default-features = false }
 psp-types = { git = "https://github.com/lapce/psp-types" }
 # psp-types = { path = "../../psp-types" }
-parking_lot = { version = "0.11.0", features = ["deadlock_detection"] }
-crossbeam-channel = "0.5.0"
+parking_lot = { version = "0.11.0", default-features = false }
+crossbeam-channel = { default-features = false, version = "0.5.0" }
 jsonrpc-lite = "0.6.0"
-serde_json = "1.0.59"
-anyhow = "1.0.32"
-toml_edit = { version = "0.14.4", features = ["easy"] }
-git2 = { version = "0.14.4", features = ["vendored-openssl"] }
+serde_json = { default-features = false, version = "1.0.59" }
+anyhow = { default-features = false, version = "1.0.32" }
+toml_edit = { version = "0.14.4", features = ["easy"], default-features = false }
+git2 = { version = "0.14.4", default-features = false }
 lapce-core = { path = "../lapce-core" }
 lapce-rpc = { path = "../lapce-rpc" }
-trash = "2.1"
-log = "0.4.17"
+trash = { default-features = false, version = "2.1" }
+log = { default-features = false, version = "0.4.17" }
